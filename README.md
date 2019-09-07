@@ -1,2 +1,1 @@
-# powershell
-a collection of scripts and notes on powershell for active directory
+ ### a collection useful scripts for active directory
