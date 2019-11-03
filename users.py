@@ -1,3 +1,6 @@
+# Takes a list of first and lastnames and outputs a file 'users.csv'
+# 
+
 import random
 import csv
 
@@ -22,6 +25,7 @@ class User:
 		self.ou = ""
 		self.site = ""
 
+# Define our LDAP strings
 ou_str = "OU={}, OU={}, DC=Piedpiper, DC=COM"
 it_ou_str = "OU={}, OU={}, OU={}, DC=Piedpiper, DC=COM"
 
@@ -38,6 +42,7 @@ for i in range(559):
 	if i > 500:
 		users[i].site = "CANBERRA"
 
+	# Here we're adding the users to an appropriate orgainisational unit
 	if i < 50 or i in range(501, 507):
 		users[i].ou = ou_str.format("Managers", users[i].site)
 
@@ -63,11 +68,10 @@ for i in range(559):
 		users[i].ou = it_ou_str.format("Level3", "IT", users[i].site)
 
 
-# send our data to file
-with open('users.csv', mode='w') as employee_file:
-	employee_writer = csv.writer(employee_file, delimiter=',', quotechar='"', quoting=csv.QUOTE_ALL)
-	employee_writer.writerow(["firstname", "lastname", "username", "password", "ou"])
+# Write all our user object data to file
+with open('users.csv', mode='w') as emps:
+	usr = csv.writer(emps, delimiter=',', quotechar='"', quoting=csv.QUOTE_ALL)
+	usr.writerow(["firstname", "lastname", "username", "password", "ou"])
 	for user in users:
-		employee_writer.writerow([user.first, user.last, user.uname, user.passwd, user.ou])
-
-
+		usr.writerow([user.first, user.last, user.uname, user.passwd, user.ou])
+	emps.close()
