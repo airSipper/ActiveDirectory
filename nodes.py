@@ -1,4 +1,5 @@
-# creates a direction graph of nodes
+# Creates a direction graph of nodes. Script will ask the user
+# if one node can talk to another and will then plot the info
 
 from matplotlib import pyplot as plt
 import networkx
