@@ -1,8 +1,7 @@
-
 <#
-	Create our OU structure and users
-	requires users.csv on administrators desktop with 
-	column headings: firstname, lastname, username, password, ou
+    Create our OU structure and users
+    requires users.csv on administrators desktop with 
+    column headings: firstname, lastname, username, password, ou
 #>
 
 
@@ -15,6 +14,8 @@ $sites = @("CANBERRA", "SYDNEY")
 
 $ADUsers = Import-csv $usr_filepath
 $OUs = @("Managers", "Accounting", "Design", "HR", "Admin", "IT")
+
+# Our IT team has 3 levels, 
 $tiers = @("Level1", "Level2", "Level3")
 
 
