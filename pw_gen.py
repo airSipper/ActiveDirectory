@@ -1,5 +1,5 @@
 # generate n random passwords that fit 
-# the password strength we've wet in pam_pwquality
+# the password strength we've set in pam_pwquality
 
 import string
 import random
