@@ -4,7 +4,7 @@
 #>
 
 # Rename the server
-Rename-computer -newname “SYD-DC-01” -LocalCredential administrator -force
+Rename-computer -newname “SYD-DC01” -LocalCredential administrator -force
 
 # Install domain services
 Install-Windowsfeature AD-domain-services
