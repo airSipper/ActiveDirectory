@@ -1,3 +1,5 @@
+#!/usr/bin/env python3
+
 # Creates a direction graph of nodes. Script will ask the user
 # if one node can talk to another and will then plot the info
 
